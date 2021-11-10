@@ -1,0 +1,45 @@
+HELP.md
+.gradle
+build/
+bin/
+basedir/
+!gradle/wrapper/gradle-wrapper.jar
+!/docker/build/
+
+### DOCKER ###
+/docker/mysql/data/
+/docker/rabbitmq/data/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+*/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+apilayer/out/
+bizlayer/out/
+cflayer/out/
+dtlayer/out/
+logs/
+
+node_modules

@@ -1,0 +1,158 @@
+io/fruitful/ecomerce/enums/MagentoProductStatus.java
+ io.fruitful.ecomerce.enums.MagentoProductStatus
+io/fruitful/ecomerce/dto/MagentoAddProductToCartRequest.java
+ io.fruitful.ecomerce.dto.MagentoAddProductToCartRequest
+io/fruitful/ecomerce/dto/MagentoCategoryDto.java
+ io.fruitful.ecomerce.dto.MagentoCategoryDto
+io/fruitful/ecomerce/dto/RemoveItemCartRequest.java
+ io.fruitful.ecomerce.dto.RemoveItemCartRequest
+io/fruitful/ecomerce/dto/MagentoCountry.java
+ io.fruitful.ecomerce.dto.MagentoCountry
+io/fruitful/ecomerce/MagentoImpl.java
+ io.fruitful.ecomerce.MagentoImpl
+io/fruitful/ecomerce/dto/MagentoTotalSegment.java
+ io.fruitful.ecomerce.dto.MagentoTotalSegment
+io/fruitful/ecomerce/Library.java
+ io.fruitful.ecomerce.Library
+io/fruitful/ecomerce/dto/MagentoWishlistResponse.java
+ io.fruitful.ecomerce.dto.MagentoWishlistResponse
+io/fruitful/ecomerce/dto/MagentoVendorInventory.java
+ io.fruitful.ecomerce.dto.MagentoVendorInventory
+io/fruitful/ecomerce/proxy/MagentoInterceptor.java
+ io.fruitful.ecomerce.proxy.MagentoInterceptor
+io/fruitful/ecomerce/dto/MagentoProductResponse.java
+ io.fruitful.ecomerce.dto.MagentoProductResponse
+io/fruitful/ecomerce/dto/MagentoCustomerExtensionAttributes.java
+ io.fruitful.ecomerce.dto.MagentoCustomerExtensionAttributes
+io/fruitful/ecomerce/dto/MagentoShippingMethodInfo.java
+ io.fruitful.ecomerce.dto.MagentoShippingMethodInfo
+io/fruitful/ecomerce/proxy/MagentoProductApi.java
+ io.fruitful.ecomerce.proxy.MagentoProductApi
+io/fruitful/ecomerce/dto/MagentoCustomerResponse.java
+ io.fruitful.ecomerce.dto.MagentoCustomerResponse
+io/fruitful/ecomerce/dto/MagentoShippingInfoRequest.java
+ io.fruitful.ecomerce.dto.MagentoShippingInfoRequest
+io/fruitful/ecomerce/dto/MagentoProductOption.java
+ io.fruitful.ecomerce.dto.MagentoProductOption
+io/fruitful/ecomerce/Magento.java
+ io.fruitful.ecomerce.Magento
+io/fruitful/ecomerce/dto/MagentoMediaDto.java
+ io.fruitful.ecomerce.dto.MagentoMediaDto
+io/fruitful/ecomerce/dto/MagentoTotalInfo.java
+ io.fruitful.ecomerce.dto.MagentoTotalInfo
+io/fruitful/ecomerce/dto/MagentoRegion.java
+ io.fruitful.ecomerce.dto.MagentoRegion
+io/fruitful/ecomerce/dto/MagentoAddress.java
+ io.fruitful.ecomerce.dto.MagentoAddress
+io/fruitful/ecomerce/dto/MagentoStockItem.java
+ io.fruitful.ecomerce.dto.MagentoStockItem
+io/fruitful/ecomerce/dto/MagentoProductDetailRequest.java
+ io.fruitful.ecomerce.dto.MagentoProductDetailRequest
+io/fruitful/ecomerce/dto/MagentoCustomAttribute.java
+ io.fruitful.ecomerce.dto.MagentoCustomAttribute
+io/fruitful/ecomerce/commons/MagentoErrorInfo.java
+ io.fruitful.ecomerce.commons.MagentoErrorInfo
+io/fruitful/ecomerce/dto/MagentoCountryDetail.java
+ io.fruitful.ecomerce.dto.MagentoCountryDetail
+io/fruitful/ecomerce/dto/MagentoCustomerRequest.java
+ io.fruitful.ecomerce.dto.MagentoCustomerRequest
+io/fruitful/ecomerce/dto/MagentoApproveProductResponse.java
+ io.fruitful.ecomerce.dto.MagentoApproveProductResponse
+io/fruitful/ecomerce/dto/BaseCustomerTokenRequest.java
+ io.fruitful.ecomerce.dto.BaseCustomerTokenRequest
+io/fruitful/ecomerce/dto/MagentoCategoryResponse.java
+ io.fruitful.ecomerce.dto.MagentoCategoryResponse
+io/fruitful/ecomerce/dto/MagentoPaymentMethod.java
+ io.fruitful.ecomerce.dto.MagentoPaymentMethod
+io/fruitful/ecomerce/dto/SSORequest.java
+ io.fruitful.ecomerce.dto.SSORequest
+io/fruitful/ecomerce/dto/MagentoVendorResponse.java
+ io.fruitful.ecomerce.dto.MagentoVendorResponse
+io/fruitful/ecomerce/enums/MagentoProductAttributes.java
+ io.fruitful.ecomerce.enums.MagentoProductAttributes
+io/fruitful/ecomerce/dto/MagentoConst.java
+ io.fruitful.ecomerce.dto.MagentoConst
+io/fruitful/ecomerce/dto/VendorAttribute.java
+ io.fruitful.ecomerce.dto.VendorAttribute
+io/fruitful/ecomerce/proxy/MagentoCustomerApi.java
+ io.fruitful.ecomerce.proxy.MagentoCustomerApi
+io/fruitful/ecomerce/MagentoFactory.java
+ io.fruitful.ecomerce.MagentoFactory
+io/fruitful/ecomerce/dto/MagentoCustomer.java
+ io.fruitful.ecomerce.dto.MagentoCustomer
+io/fruitful/ecomerce/dto/MagentoEstimateShippingRequest.java
+ io.fruitful.ecomerce.dto.MagentoEstimateShippingRequest
+io/fruitful/ecomerce/dto/MagentoCategoryRequest.java
+ io.fruitful.ecomerce.dto.MagentoCategoryRequest
+io/fruitful/ecomerce/dto/MagentoProductRequest.java
+ io.fruitful.ecomerce.dto.MagentoProductRequest
+io/fruitful/ecomerce/utils/RetrofitService.java
+ io.fruitful.ecomerce.utils.RetrofitService
+ io.fruitful.ecomerce.utils.RetrofitService$1
+io/fruitful/ecomerce/dto/MagentoLocationResponse.java
+ io.fruitful.ecomerce.dto.MagentoLocationResponse
+io/fruitful/ecomerce/dto/MagentoCategorySearchRequest.java
+ io.fruitful.ecomerce.dto.MagentoCategorySearchRequest
+io/fruitful/ecomerce/dto/MagentoCartProductExtensionAttributes.java
+ io.fruitful.ecomerce.dto.MagentoCartProductExtensionAttributes
+io/fruitful/ecomerce/dto/MagentoCartInfoResponse.java
+ io.fruitful.ecomerce.dto.MagentoCartInfoResponse
+io/fruitful/ecomerce/dto/MagentoExtensionAttributes.java
+ io.fruitful.ecomerce.dto.MagentoExtensionAttributes
+io/fruitful/ecomerce/dto/MagentoWishlistRequest.java
+ io.fruitful.ecomerce.dto.MagentoWishlistRequest
+io/fruitful/ecomerce/dto/MagentoAddProductToCartResponse.java
+ io.fruitful.ecomerce.dto.MagentoAddProductToCartResponse
+io/fruitful/ecomerce/dto/MagentoCustomerLoginRequest.java
+ io.fruitful.ecomerce.dto.MagentoCustomerLoginRequest
+io/fruitful/ecomerce/Configuration.java
+ io.fruitful.ecomerce.Configuration
+io/fruitful/ecomerce/dto/MagentoCompanyAttribute.java
+ io.fruitful.ecomerce.dto.MagentoCompanyAttribute
+io/fruitful/ecomerce/enums/SecurityConst.java
+ io.fruitful.ecomerce.enums.SecurityConst
+io/fruitful/ecomerce/proxy/MagentoCartApi.java
+ io.fruitful.ecomerce.proxy.MagentoCartApi
+io/fruitful/ecomerce/dto/MagentoAddressRequest.java
+ io.fruitful.ecomerce.dto.MagentoAddressRequest
+io/fruitful/ecomerce/dto/ShippingRequest.java
+ io.fruitful.ecomerce.dto.ShippingRequest
+ io.fruitful.ecomerce.dto.ShippingRequest$ExtensionAttributes
+io/fruitful/ecomerce/dto/MagentoApproveRejectProductRequest.java
+ io.fruitful.ecomerce.dto.MagentoApproveRejectProductRequest
+io/fruitful/ecomerce/dto/MagentoProductSearchRequest.java
+ io.fruitful.ecomerce.dto.MagentoProductSearchRequest
+io/fruitful/ecomerce/dto/MagentoCartExtensionAttributes.java
+ io.fruitful.ecomerce.dto.MagentoCartExtensionAttributes
+io/fruitful/ecomerce/dto/MagentoTotalItem.java
+ io.fruitful.ecomerce.dto.MagentoTotalItem
+io/fruitful/ecomerce/dto/MagentoCartResponse.java
+ io.fruitful.ecomerce.dto.MagentoCartResponse
+io/fruitful/ecomerce/dto/MagentoProduct.java
+ io.fruitful.ecomerce.dto.MagentoProduct
+io/fruitful/ecomerce/dto/MagentoAddressInfo.java
+ io.fruitful.ecomerce.dto.MagentoAddressInfo
+io/fruitful/ecomerce/dto/MagentoShippingInfo.java
+ io.fruitful.ecomerce.dto.MagentoShippingInfo
+io/fruitful/ecomerce/dto/MagentoCartTotalsResponse.java
+ io.fruitful.ecomerce.dto.MagentoCartTotalsResponse
+io/fruitful/ecomerce/dto/MagentoAddressRegion.java
+ io.fruitful.ecomerce.dto.MagentoAddressRegion
+io/fruitful/ecomerce/dto/MagentoSegment.java
+ io.fruitful.ecomerce.dto.MagentoSegment
+io/fruitful/ecomerce/proxy/MagentoWishlistApi.java
+ io.fruitful.ecomerce.proxy.MagentoWishlistApi
+io/fruitful/ecomerce/dto/MagentoAddressDto.java
+ io.fruitful.ecomerce.dto.MagentoAddressDto
+io/fruitful/ecomerce/dto/MagentoCategory.java
+ io.fruitful.ecomerce.dto.MagentoCategory
+io/fruitful/ecomerce/commons/MagentoException.java
+ io.fruitful.ecomerce.commons.MagentoException
+io/fruitful/ecomerce/dto/CheckoutRequest.java
+ io.fruitful.ecomerce.dto.CheckoutRequest
+io/fruitful/ecomerce/dto/MagentoCartItem.java
+ io.fruitful.ecomerce.dto.MagentoCartItem
+io/fruitful/ecomerce/dto/UpdateMagentoCategoryRequest.java
+ io.fruitful.ecomerce.dto.UpdateMagentoCategoryRequest
+io/fruitful/ecomerce/dto/MagentoCustomOption.java
+ io.fruitful.ecomerce.dto.MagentoCustomOption
