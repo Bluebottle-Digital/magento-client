@@ -2,13 +2,11 @@ package io.fruitful.ecomerce.dto;
 
 import com.fasterxml.jackson.annotation.*;
 import io.fruitful.ecomerce.enums.MagentoProductStatus;
-import lombok.Data;
-import org.springframework.util.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoProduct {
     @JsonProperty("id")
@@ -67,7 +65,7 @@ public class MagentoProduct {
 
         if (magentoExtensionAttributes != null && magentoExtensionAttributes.getStockItem() != null) {
             MagentoStockItem stockItem = magentoExtensionAttributes.getStockItem();
-            return Boolean.FALSE.equals(stockItem.getIsInStock()) || stockItem.getMinQty() >= stockItem.getQty();
+            return Boolean.FALSE.equals(stockItem.getInStock()) || stockItem.getMinQty() >= stockItem.getQty();
         }
 
         return false;
@@ -147,5 +145,64 @@ public class MagentoProduct {
         }
 
         return false;
+    }
+
+    public MagentoProduct() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Long getStatus() {
+        return status;
+    }
+
+    public void setStatus(Long status) {
+        this.status = status;
+    }
+
+    public Long getVisibility() {
+        return visibility;
+    }
+
+    public void setVisibility(Long visibility) {
+        this.visibility = visibility;
+    }
+
+    public Long getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Long weight) {
+        this.weight = weight;
     }
 }

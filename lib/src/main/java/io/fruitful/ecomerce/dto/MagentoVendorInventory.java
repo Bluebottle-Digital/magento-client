@@ -3,11 +3,7 @@ package io.fruitful.ecomerce.dto;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 public class MagentoVendorInventory {
     private Integer locationId;
 
@@ -34,5 +30,16 @@ public class MagentoVendorInventory {
     @JsonSetter("inventory_id")
     public void setInventoryId(Integer inventoryId) {
         this.inventoryId = inventoryId;
+    }
+
+    public MagentoVendorInventory() {
+    }
+
+    public Integer getQty() {
+        return qty;
+    }
+
+    public void setQty(Integer qty) {
+        this.qty = qty;
     }
 }

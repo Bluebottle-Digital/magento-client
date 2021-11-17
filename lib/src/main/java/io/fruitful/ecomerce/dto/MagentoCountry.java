@@ -4,11 +4,7 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoCountry {
 	@JsonProperty("id")
@@ -60,5 +56,16 @@ public class MagentoCountry {
 	@JsonSetter("full_name_english")
 	public void setFullNameEnglish(String fullNameEnglish) {
 		this.fullNameEnglish = fullNameEnglish;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public MagentoCountry() {
 	}
 }

@@ -1,6 +1,10 @@
 package io.fruitful.ecomerce;
 
-import org.springframework.util.StringUtils;
+import io.fruitful.ecomerce.magento.MagentoAdmin;
+import io.fruitful.ecomerce.magento.MagentoAdminImpl;
+import io.fruitful.ecomerce.magento.MagentoCustomer;
+import io.fruitful.ecomerce.magento.MagentoCustomerImpl;
+import org.apache.commons.lang3.StringUtils;
 
 public class MagentoFactory {
     private final Configuration conf;
@@ -12,7 +16,7 @@ public class MagentoFactory {
        this.conf = conf;
     }
 
-    public Magento getInstance() {
+    public MagentoAdmin getInstance() {
         String endpoint = conf.getEndpoint();
         String integrationToken = conf.getIntegrationToken();
         String mediaLocation = conf.getMediaLocation();
@@ -20,20 +24,18 @@ public class MagentoFactory {
             throw new IllegalStateException("Endpoint or integrationToken or mediaLocation not supplied.");
         }
 
-        return new MagentoImpl(conf);
+        return new MagentoAdminImpl(conf);
     }
 
-    public Magento getInstance(String customerToken) {
+    public MagentoCustomer getInstance(String customerToken) {
         String endpoint = conf.getEndpoint();
-        String integrationToken = conf.getIntegrationToken();
         String mediaLocation = conf.getMediaLocation();
         if (StringUtils.isEmpty(endpoint)
-                || StringUtils.isEmpty(integrationToken)
                 || StringUtils.isEmpty(customerToken)
                 || StringUtils.isEmpty(mediaLocation)) {
             throw new IllegalStateException("Endpoint or integrationToken or customerToken or mediaLocation not supplied.");
         }
 
-        return new MagentoImpl(conf, customerToken);
+        return new MagentoCustomerImpl(conf, customerToken);
     }
 }

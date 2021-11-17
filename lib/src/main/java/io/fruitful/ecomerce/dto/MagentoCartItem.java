@@ -4,9 +4,7 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
 
-@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoCartItem {
 
@@ -64,5 +62,48 @@ public class MagentoCartItem {
 	@JsonSetter("extension_attributes")
 	public void setExtensionAttributes(MagentoCartProductExtensionAttributes extensionAttributes) {
 		this.extensionAttributes = extensionAttributes;
+	}
+
+	public String getSku() {
+		return sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
+	}
+
+	public Integer getQty() {
+		return qty;
+	}
+
+	public void setQty(Integer qty) {
+		this.qty = qty;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public MagentoProductOption getProductOption() {
+		return productOption;
+	}
+
+	public void setProductOption(MagentoProductOption productOption) {
+		this.productOption = productOption;
+	}
+
+	public MagentoCartItem() {
 	}
 }

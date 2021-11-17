@@ -4,11 +4,7 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoTotalItem {
 	private Long itemId;
@@ -174,5 +170,32 @@ public class MagentoTotalItem {
 	@JsonSetter("qty")
 	public void setQuantity(Double quantity) {
 		this.quantity = quantity;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Object getOptions() {
+		return options;
+	}
+
+	public void setOptions(Object options) {
+		this.options = options;
+	}
+
+	public MagentoTotalItem() {
 	}
 }

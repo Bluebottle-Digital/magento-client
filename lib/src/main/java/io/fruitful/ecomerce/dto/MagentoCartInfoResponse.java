@@ -1,10 +1,5 @@
 package io.fruitful.ecomerce.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
 public class MagentoCartInfoResponse {
     private MagentoCartResponse magentoCart;
 
@@ -13,5 +8,24 @@ public class MagentoCartInfoResponse {
     public MagentoCartInfoResponse(MagentoCartResponse magentoCart, MagentoCartTotalsResponse magentoCartTotals) {
         this.magentoCart = magentoCart;
         this.magentoCartTotals = magentoCartTotals;
+    }
+
+    public MagentoCartResponse getMagentoCart() {
+        return magentoCart;
+    }
+
+    public void setMagentoCart(MagentoCartResponse magentoCart) {
+        this.magentoCart = magentoCart;
+    }
+
+    public MagentoCartTotalsResponse getMagentoCartTotals() {
+        return magentoCartTotals;
+    }
+
+    public void setMagentoCartTotals(MagentoCartTotalsResponse magentoCartTotals) {
+        this.magentoCartTotals = magentoCartTotals;
+    }
+
+    public MagentoCartInfoResponse() {
     }
 }

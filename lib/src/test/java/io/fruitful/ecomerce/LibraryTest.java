@@ -7,6 +7,8 @@ import io.fruitful.ecomerce.commons.MagentoException;
 import io.fruitful.ecomerce.dto.BaseCustomerTokenRequest;
 import io.fruitful.ecomerce.dto.MagentoProductResponse;
 import io.fruitful.ecomerce.dto.MagentoProductSearchRequest;
+import io.fruitful.ecomerce.magento.MagentoAdmin;
+import io.fruitful.ecomerce.magento.MagentoCustomer;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -19,13 +21,13 @@ public class LibraryTest {
 //        MagentoFactory magentoFactory = new MagentoFactory(configuration);
 //
 //        // call using integrationToken
-//        Magento magento = magentoFactory.getInstance();
+//        MagentoAdmin admin = magentoFactory.getInstance();
 //        MagentoProductSearchRequest request = new MagentoProductSearchRequest();
-//        MagentoProductResponse magentoProductResponse = magento.searchProduct(null, request);
+//        MagentoProductResponse magentoProductResponse = admin.searchProduct(null, request);
 //
 //        // call using customerToken
 //        String customerToken = "";
-//        Magento magentoCustomer = magentoFactory.getInstance(customerToken);
-//        String cartId = magentoCustomer.createCart();
+//        MagentoCustomer customer = magentoFactory.getInstance(customerToken);
+//        String cartId = customer.createCart();
     }
 }

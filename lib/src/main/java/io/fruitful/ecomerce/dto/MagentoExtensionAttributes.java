@@ -1,13 +1,11 @@
 package io.fruitful.ecomerce.dto;
 
 import com.fasterxml.jackson.annotation.*;
-import lombok.Data;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoExtensionAttributes {
     @JsonProperty("website_ids")
@@ -166,5 +164,64 @@ public class MagentoExtensionAttributes {
     @JsonSetter("tax_grandtotal_details")
     public void setTaxGrandTotalDetails(List<Object> taxGrandTotalDetails) {
         this.taxGrandTotalDetails = taxGrandTotalDetails;
+    }
+
+    public MagentoExtensionAttributes() {
+    }
+
+    public List<Long> getWebsiteIds() {
+        return websiteIds;
+    }
+
+    public void setWebsiteIds(List<Long> websiteIds) {
+        this.websiteIds = websiteIds;
+    }
+
+    public MagentoStockItem getStockItem() {
+        return stockItem;
+    }
+
+    public void setStockItem(MagentoStockItem stockItem) {
+        this.stockItem = stockItem;
+    }
+
+    public Map<Object, Object> getAdditionalProperties() {
+        return additionalProperties;
+    }
+
+    public void setAdditionalProperties(Map<Object, Object> additionalProperties) {
+        this.additionalProperties = additionalProperties;
+    }
+
+    public MagentoVendorResponse getVendor() {
+        return vendor;
+    }
+
+    public void setVendor(MagentoVendorResponse vendor) {
+        this.vendor = vendor;
+    }
+
+    public String getTalentUserId() {
+        return talentUserId;
+    }
+
+    public void setTalentUserId(String talentUserId) {
+        this.talentUserId = talentUserId;
+    }
+
+    public Boolean getInWishList() {
+        return inWishList;
+    }
+
+    public void setInWishList(Boolean inWishList) {
+        this.inWishList = inWishList;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

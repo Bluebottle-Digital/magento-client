@@ -1,2 +1,0 @@
-io/fruitful/ecomerce/LibraryTest.java
- io.fruitful.ecomerce.LibraryTest

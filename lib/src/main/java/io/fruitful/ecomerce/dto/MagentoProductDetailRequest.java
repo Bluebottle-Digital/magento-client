@@ -1,12 +1,17 @@
 package io.fruitful.ecomerce.dto;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
-@EqualsAndHashCode(callSuper = true)
-@Data
-@NoArgsConstructor
 public class MagentoProductDetailRequest extends BaseCustomerTokenRequest {
 	private String sku;
+
+	public MagentoProductDetailRequest(String bearerToken, Long customerId) {
+		super(bearerToken, customerId);
+	}
+
+	public String getSku() {
+		return sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
+	}
 }

@@ -3,11 +3,7 @@ package io.fruitful.ecomerce.dto;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoAddressInfo {
 	private MagentoAddressRequest shippingAddress;
@@ -54,4 +50,8 @@ public class MagentoAddressInfo {
 	public void setShippingMethodCode(String shippingMethodCode) {
 		this.shippingMethodCode = shippingMethodCode;
 	}
+
+	public MagentoAddressInfo() {
+	}
+
 }

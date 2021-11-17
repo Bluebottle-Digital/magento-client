@@ -1,11 +1,7 @@
 package io.fruitful.ecomerce.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 public class MagentoVendorResponse {
     @JsonProperty("id")
     private Integer id;
@@ -18,4 +14,39 @@ public class MagentoVendorResponse {
 
     @JsonProperty("phone")
     private String phone;
+
+    public MagentoVendorResponse() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }

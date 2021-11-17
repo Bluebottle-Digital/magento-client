@@ -4,13 +4,9 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 
-@Data
-@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoTotalInfo {
 	private Double grandTotal;
@@ -267,5 +263,32 @@ public class MagentoTotalInfo {
 	@JsonSetter("total_segments")
 	public void setTotalSegments(List<MagentoTotalSegment> totalSegments) {
 		this.totalSegments = totalSegments;
+	}
+
+	public Double getSubtotal() {
+		return subtotal;
+	}
+
+	public void setSubtotal(Double subtotal) {
+		this.subtotal = subtotal;
+	}
+
+	public List<MagentoTotalItem> getItems() {
+		return items;
+	}
+
+	public void setItems(List<MagentoTotalItem> items) {
+		this.items = items;
+	}
+
+	public MagentoExtensionAttributes getExtensionAttributes() {
+		return extensionAttributes;
+	}
+
+	public void setExtensionAttributes(MagentoExtensionAttributes extensionAttributes) {
+		this.extensionAttributes = extensionAttributes;
+	}
+
+	public MagentoTotalInfo() {
 	}
 }

@@ -2,11 +2,7 @@ package io.fruitful.ecomerce.dto;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 public class ShippingRequest {
 	private Double amount;
 	private Boolean available;
@@ -110,8 +106,25 @@ public class ShippingRequest {
 		this.extensionAttributes = extensionAttributes;
 	}
 
-	@Data
-	@NoArgsConstructor
+	public ShippingRequest() {
+	}
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	public Boolean getAvailable() {
+		return available;
+	}
+
+	public void setAvailable(Boolean available) {
+		this.available = available;
+	}
+
 	public class ExtensionAttributes {
 		private Long locationId;
 		private Long vendorId;
@@ -134,6 +147,9 @@ public class ShippingRequest {
 		@JsonSetter("vendorId")
 		public void setVendorId(Long vendorId) {
 			this.vendorId = vendorId;
+		}
+
+		public ExtensionAttributes() {
 		}
 	}
 }

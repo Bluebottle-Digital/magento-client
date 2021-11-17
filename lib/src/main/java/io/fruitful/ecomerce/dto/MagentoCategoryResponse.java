@@ -4,11 +4,9 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
 
 import java.util.List;
 
-@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoCategoryResponse {
 	@JsonProperty("items")
@@ -24,5 +22,16 @@ public class MagentoCategoryResponse {
 	@JsonSetter("total_count")
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
+	}
+
+	public List<MagentoCategory> getItems() {
+		return items;
+	}
+
+	public void setItems(List<MagentoCategory> items) {
+		this.items = items;
+	}
+
+	public MagentoCategoryResponse() {
 	}
 }

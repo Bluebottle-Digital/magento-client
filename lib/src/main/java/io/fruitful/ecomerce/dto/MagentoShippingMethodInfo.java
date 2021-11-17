@@ -4,12 +4,7 @@ import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-
-@Data
-@NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MagentoShippingMethodInfo {
 	private String carrierCode;
@@ -124,5 +119,24 @@ public class MagentoShippingMethodInfo {
 	@JsonSetter("price_incl_tax")
 	public void setPriceIncludeTax(Double priceIncludeTax) {
 		this.priceIncludeTax = priceIncludeTax;
+	}
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
+	}
+
+	public boolean isAvailable() {
+		return available;
+	}
+
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
+
+	public MagentoShippingMethodInfo() {
 	}
 }

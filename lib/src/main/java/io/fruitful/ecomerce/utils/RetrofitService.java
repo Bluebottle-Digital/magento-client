@@ -6,35 +6,25 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
 import io.fruitful.ecomerce.commons.MagentoErrorInfo;
 import io.fruitful.ecomerce.commons.MagentoException;
-import lombok.extern.log4j.Log4j2;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
-import org.apache.commons.io.IOUtils;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import org.springframework.stereotype.Service;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-@Service
-@PropertySource("classpath:${spring.profiles.active:dev}_serviceurl.properties")
-@Log4j2
 public class RetrofitService {
+	private static final Logger log = LoggerFactory.getLogger(RetrofitService.class);
 
-	@Value("${mail.url}")
-	private String mailUrl;
-	
 	public static <S> S createService(
 			Class<S> serviceClass, Interceptor interceptor, String url) {
 		url = url.endsWith("/") ? url : url + "/";
@@ -58,7 +48,7 @@ public class RetrofitService {
 			httpClient.addInterceptor(loggingInterceptor);
 		}
 
-		ObjectMapper objectMapper = new Jackson2ObjectMapperBuilder().build();
+		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.configure(
 				DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
@@ -91,7 +81,7 @@ public class RetrofitService {
 			httpClient.addInterceptor(loggingInterceptor);
 		}
 
-		ObjectMapper objectMapper = new Jackson2ObjectMapperBuilder().build();
+		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.configure(
 				DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 		objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
@@ -110,10 +100,7 @@ public class RetrofitService {
 	public static <T> T getData(Response<T> response) throws MagentoException {
 		if (response.errorBody() != null) {
 			try {
-				String message = IOUtils.toString(response.errorBody().byteStream(), StandardCharsets.UTF_8.name());
-				if (message == null) {
-					return null;
-				}
+				String message = new String(response.errorBody().bytes());
 				Map<String, Object> map = new ObjectMapper().readValue(message, new TypeReference<HashMap<String, Object>>() {});
 				throw new MagentoException(new MagentoErrorInfo(response.code(), (String) map.get("message")));
 			} catch (IOException e) {

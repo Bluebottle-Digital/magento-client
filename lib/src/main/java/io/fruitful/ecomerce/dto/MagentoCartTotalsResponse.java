@@ -3,12 +3,10 @@ package io.fruitful.ecomerce.dto;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
-import lombok.Data;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 public class MagentoCartTotalsResponse {
     private Double grandTotal;
 
@@ -266,5 +264,24 @@ public class MagentoCartTotalsResponse {
     @JsonSetter("total_segments")
     public void setTotalSegments(List<MagentoTotalSegment> totalSegments) {
         this.totalSegments = totalSegments;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public List<MagentoCartItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<MagentoCartItem> items) {
+        this.items = items;
+    }
+
+    public MagentoCartTotalsResponse() {
     }
 }
