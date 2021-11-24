@@ -38,4 +38,8 @@ public class MagentoFactory {
 
         return new MagentoCustomerImpl(conf, customerToken);
     }
+
+    public Configuration getConf() {
+        return conf;
+    }
 }

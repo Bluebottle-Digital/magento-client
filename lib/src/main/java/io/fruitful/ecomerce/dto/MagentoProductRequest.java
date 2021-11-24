@@ -3,12 +3,14 @@ package io.fruitful.ecomerce.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MagentoProductRequest extends BaseCustomerTokenRequest {
+public class MagentoProductRequest {
     private MagentoProduct product;
 
-    public MagentoProductRequest(String bearerToken, Long customerId, MagentoProduct product) {
-        super(bearerToken, customerId);
+    public MagentoProductRequest(MagentoProduct product) {
         this.product = product;
+    }
+
+    public MagentoProductRequest() {
     }
 
     public MagentoProduct getProduct() {

@@ -14,6 +14,6 @@ public class MagentoCustomerResponse {
 		this.customerId = customerId;
 	}
 
-	public MagentoCustomerResponse() {
+	public MagentoCustomerResponse(Long id) {
 	}
 }

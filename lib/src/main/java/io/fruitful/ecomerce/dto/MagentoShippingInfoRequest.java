@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MagentoShippingInfoRequest extends BaseCustomerTokenRequest{
+public class MagentoShippingInfoRequest  {
 	@JsonProperty("addressInformation")
 	private MagentoAddressInfo addressInformation;
 
@@ -16,7 +16,7 @@ public class MagentoShippingInfoRequest extends BaseCustomerTokenRequest{
 		this.addressInformation = addressInformation;
 	}
 
-	public MagentoShippingInfoRequest(String bearerToken, Long customerId) {
-		super(bearerToken, customerId);
+	public MagentoShippingInfoRequest() {
+
 	}
 }

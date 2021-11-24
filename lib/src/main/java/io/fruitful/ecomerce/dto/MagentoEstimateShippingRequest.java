@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MagentoEstimateShippingRequest extends BaseCustomerTokenRequest{
+public class MagentoEstimateShippingRequest {
 
 	@JsonProperty("address")
 	private MagentoAddressDto address;
@@ -17,7 +17,6 @@ public class MagentoEstimateShippingRequest extends BaseCustomerTokenRequest{
 		this.address = address;
 	}
 
-	public MagentoEstimateShippingRequest(String bearerToken, Long customerId) {
-		super(bearerToken, customerId);
+	public MagentoEstimateShippingRequest() {
 	}
 }

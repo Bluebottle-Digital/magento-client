@@ -2,25 +2,22 @@ package io.fruitful.ecomerce.magento;
 
 import io.fruitful.ecomerce.commons.MagentoException;
 import io.fruitful.ecomerce.dto.*;
+import retrofit2.Response;
 
 import java.util.List;
 
 public interface MagentoCustomer {
     Boolean magentoRemoveItemsCart(RemoveItemCartRequest request) throws MagentoException;
 
-    MagentoCartTotalsResponse magentoGetCartTotals(BaseCustomerTokenRequest request) throws MagentoException;
+    MagentoCartTotalsResponse magentoGetCartTotals() throws MagentoException;
 
-    MagentoCartResponse magentoGetCurrentCart(BaseCustomerTokenRequest request) throws MagentoException;
+    MagentoCartResponse magentoGetCurrentCart() throws MagentoException;
 
     String createCart() throws MagentoException;
 
     MagentoAddProductToCartResponse magentoAddProductToCart(MagentoAddProductToCartRequest request) throws MagentoException;
 
     MagentoAddProductToCartResponse magentoUpdateProductCart(MagentoAddProductToCartRequest request) throws MagentoException;
-
-    List<MagentoCountry> getCountries() throws MagentoException;
-
-    MagentoCountryDetail getCountryDetail(String countryId) throws MagentoException;
 
     List<MagentoShippingMethodInfo> estimateShippingMethods(MagentoEstimateShippingRequest request) throws MagentoException;
 
@@ -41,4 +38,6 @@ public interface MagentoCustomer {
     boolean removeAll(MagentoWishlistRequest request) throws MagentoException;
 
     boolean addToCartFromWishlist(MagentoWishlistRequest request) throws MagentoException;
+
+    Response<Object> customerLogin(MagentoCustomerLoginRequest request) throws MagentoException;
 }

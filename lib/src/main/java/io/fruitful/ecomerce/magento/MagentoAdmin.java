@@ -20,4 +20,12 @@ public interface MagentoAdmin {
     List<MagentoApproveProductResponse> approveProduct(MagentoApproveRejectProductRequest request) throws MagentoException;
 
     boolean rejectProduct(MagentoApproveRejectProductRequest request) throws MagentoException;
+
+    MagentoCustomerResponse createCustomer(MagentoCustomerRequest request) throws MagentoException;
+
+    String getAccessToken(Long customerId) throws MagentoException;
+
+    List<MagentoCountry> getCountries() throws MagentoException;
+
+    MagentoCountryDetail getCountryDetail(String countryId) throws MagentoException;
 }

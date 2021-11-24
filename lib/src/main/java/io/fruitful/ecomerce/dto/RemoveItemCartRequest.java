@@ -1,10 +1,9 @@
 package io.fruitful.ecomerce.dto;
 
-public class RemoveItemCartRequest extends BaseCustomerTokenRequest {
+public class RemoveItemCartRequest {
     private Long itemId;
 
-    public RemoveItemCartRequest(String customerToken, Long customerId, Long itemId) {
-        super(customerToken, customerId);
+    public RemoveItemCartRequest(Long itemId) {
         this.itemId = itemId;
     }
 

@@ -1,10 +1,9 @@
 package io.fruitful.ecomerce.dto;
 
-public class MagentoProductDetailRequest extends BaseCustomerTokenRequest {
+public class MagentoProductDetailRequest {
 	private String sku;
 
-	public MagentoProductDetailRequest(String bearerToken, Long customerId) {
-		super(bearerToken, customerId);
+	public MagentoProductDetailRequest() {
 	}
 
 	public String getSku() {

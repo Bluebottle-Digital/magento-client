@@ -3,11 +3,11 @@ package io.fruitful.ecomerce.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MagentoWishlistRequest extends BaseCustomerTokenRequest {
+public class MagentoWishlistRequest {
     private String sku;
 
-    public MagentoWishlistRequest(String bearerToken, Long customerId) {
-        super(bearerToken, customerId);
+    public MagentoWishlistRequest() {
+
     }
 
     public String getSku() {

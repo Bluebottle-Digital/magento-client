@@ -20,7 +20,7 @@ public class MagentoAdminImpl implements MagentoAdmin {
     private static final Logger log = LoggerFactory.getLogger(MagentoAdminImpl.class);
     private final Configuration conf;
     private MagentoCustomerApi magentoCustomerApi;
-
+    private MagentoCartApi magentoCartApi;
     //for admin and talent using integration token
     private MagentoProductApi magentoProductApi;
 
@@ -261,5 +261,57 @@ public class MagentoAdminImpl implements MagentoAdmin {
             throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
         }
         return RetrofitService.getData(response);
+    }
+
+    @Override
+    public MagentoCustomerResponse createCustomer(MagentoCustomerRequest request) throws MagentoException {
+        Response<io.fruitful.ecomerce.dto.MagentoCustomer> response;
+        try {
+            response = this.magentoCustomerApi.createCustomer(request).execute();
+        } catch (Exception ex) {
+            log.error("Error when create customer ", ex);
+            throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
+        }
+        return new MagentoCustomerResponse(RetrofitService.getData(response).getId());
+    }
+
+    @Override
+    public String getAccessToken(Long customerId) throws MagentoException {
+        Response<String> response;
+        try {
+            response = this.magentoCustomerApi.getAccessToken(customerId).execute();
+        } catch (Exception ex) {
+            log.error("Error when retrieve customer's access token ", ex);
+            throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
+        }
+        return RetrofitService.getData(response);
+    }
+
+    @Override
+    public List<MagentoCountry> getCountries() throws MagentoException {
+        Response<List<MagentoCountry>> response;
+        try {
+            response = this.magentoCartApi.getCountries().execute();
+        } catch (Exception ex) {
+            log.error("Get countries error ", ex);
+            throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
+        }
+        return RetrofitService.getData(response);
+    }
+
+    @Override
+    public MagentoCountryDetail getCountryDetail(String countryId) throws MagentoException {
+        Response<MagentoCountryDetail> response;
+        try {
+            response = this.magentoCartApi.getCountryDetail(countryId).execute();
+        } catch (Exception ex) {
+            log.error("Get countries error ", ex);
+            throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
+        }
+        return RetrofitService.getData(response);
+    }
+
+    public Configuration getConf() {
+        return conf;
     }
 }

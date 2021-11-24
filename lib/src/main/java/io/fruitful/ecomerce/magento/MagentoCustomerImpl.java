@@ -6,6 +6,7 @@ import io.fruitful.ecomerce.Configuration;
 import io.fruitful.ecomerce.commons.MagentoErrorInfo;
 import io.fruitful.ecomerce.commons.MagentoException;
 import io.fruitful.ecomerce.dto.*;
+import io.fruitful.ecomerce.enums.SecurityConst;
 import io.fruitful.ecomerce.proxy.*;
 import io.fruitful.ecomerce.utils.RetrofitService;
 import org.apache.commons.collections4.CollectionUtils;
@@ -24,6 +25,7 @@ public class MagentoCustomerImpl implements MagentoCustomer {
     private MagentoProductApi magentoCustomerProductApi;
     private MagentoWishlistApi magentoWishlistApi;
     private MagentoCartApi magentoCartApi;
+    private MagentoCustomerApi magentoCustomerApi;
 
     public MagentoCustomerImpl(Configuration conf, String customerToken) {
         this.conf = conf;
@@ -56,7 +58,7 @@ public class MagentoCustomerImpl implements MagentoCustomer {
     }
 
     @Override
-    public MagentoCartTotalsResponse magentoGetCartTotals(BaseCustomerTokenRequest request) throws MagentoException {
+    public MagentoCartTotalsResponse magentoGetCartTotals() throws MagentoException {
         Response<MagentoCartTotalsResponse> response;
         try {
             response = this.magentoCartApi.getCartTotals(this.customerToken).execute();
@@ -68,7 +70,7 @@ public class MagentoCustomerImpl implements MagentoCustomer {
     }
 
     @Override
-    public MagentoCartResponse magentoGetCurrentCart(BaseCustomerTokenRequest request) throws MagentoException {
+    public MagentoCartResponse magentoGetCurrentCart() throws MagentoException {
         Response<MagentoCartResponse> response;
         try {
             response = this.magentoCartApi.getCurrentCart(this.customerToken).execute();
@@ -114,30 +116,6 @@ public class MagentoCustomerImpl implements MagentoCustomer {
         }
         return RetrofitService.getData(response);
 
-    }
-
-    @Override
-    public List<MagentoCountry> getCountries() throws MagentoException {
-        Response<List<MagentoCountry>> response;
-        try {
-            response = this.magentoCartApi.getCountries().execute();
-        } catch (Exception ex) {
-            log.error("Get countries error ", ex);
-            throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
-        }
-        return RetrofitService.getData(response);
-    }
-
-    @Override
-    public MagentoCountryDetail getCountryDetail(String countryId) throws MagentoException {
-        Response<MagentoCountryDetail> response;
-        try {
-            response = this.magentoCartApi.getCountryDetail(countryId).execute();
-        } catch (Exception ex) {
-            log.error("Get countries error ", ex);
-            throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
-        }
-        return RetrofitService.getData(response);
     }
 
     @Override
@@ -388,5 +366,31 @@ public class MagentoCustomerImpl implements MagentoCustomer {
             throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
         }
         return RetrofitService.getData(response);
+    }
+
+
+    @Override
+    public Response<Object> customerLogin(MagentoCustomerLoginRequest request) throws MagentoException {
+        Response<Object> response;
+        try {
+            response = this.magentoCustomerApi.customerLogin(SecurityConst.XML_HTTP_REQUEST, request).execute();
+        } catch (Exception ex) {
+            log.error("Error customerLogin ", ex);
+            throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
+        }
+        RetrofitService.getData(response);
+        return response;
+    }
+
+    public Configuration getConf() {
+        return conf;
+    }
+
+    public String getCustomerToken() {
+        return customerToken;
+    }
+
+    public void setCustomerToken(String customerToken) {
+        this.customerToken = customerToken;
     }
 }

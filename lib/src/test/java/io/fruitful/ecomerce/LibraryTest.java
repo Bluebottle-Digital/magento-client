@@ -4,7 +4,6 @@
 package io.fruitful.ecomerce;
 
 import io.fruitful.ecomerce.commons.MagentoException;
-import io.fruitful.ecomerce.dto.BaseCustomerTokenRequest;
 import io.fruitful.ecomerce.dto.MagentoProductResponse;
 import io.fruitful.ecomerce.dto.MagentoProductSearchRequest;
 import io.fruitful.ecomerce.magento.MagentoAdmin;

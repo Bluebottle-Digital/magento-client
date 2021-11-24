@@ -3,11 +3,10 @@ package io.fruitful.ecomerce.dto;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MagentoAddProductToCartRequest extends BaseCustomerTokenRequest{
+public class MagentoAddProductToCartRequest {
 	private MagentoCartItem cartItem;
 
-	public MagentoAddProductToCartRequest(String bearerToken, Long customerId, MagentoCartItem cartItem) {
-		super(bearerToken, customerId);
+	public MagentoAddProductToCartRequest(MagentoCartItem cartItem) {
 		this.cartItem = cartItem;
 	}
 
