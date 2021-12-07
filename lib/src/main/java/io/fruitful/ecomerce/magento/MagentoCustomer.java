@@ -40,4 +40,6 @@ public interface MagentoCustomer {
     boolean addToCartFromWishlist(MagentoWishlistRequest request) throws MagentoException;
 
     Response<Object> customerLogin(MagentoCustomerLoginRequest request) throws MagentoException;
+
+    String getAccessToken(Long customerId) throws MagentoException;
 }

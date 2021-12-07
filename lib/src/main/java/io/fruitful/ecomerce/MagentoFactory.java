@@ -13,29 +13,20 @@ public class MagentoFactory {
         if (conf == null) {
             throw new NullPointerException("configuration cannot be null");
         }
-       this.conf = conf;
-    }
-
-    public MagentoAdmin getInstance() {
         String endpoint = conf.getEndpoint();
         String integrationToken = conf.getIntegrationToken();
         String mediaLocation = conf.getMediaLocation();
         if (StringUtils.isEmpty(endpoint) || StringUtils.isEmpty(integrationToken) || StringUtils.isEmpty(mediaLocation)) {
             throw new IllegalStateException("Endpoint or integrationToken or mediaLocation not supplied.");
         }
+        this.conf = conf;
+    }
 
+    public MagentoAdmin getInstance() {
         return new MagentoAdminImpl(conf);
     }
 
     public MagentoCustomer getInstance(String customerToken) {
-        String endpoint = conf.getEndpoint();
-        String mediaLocation = conf.getMediaLocation();
-        if (StringUtils.isEmpty(endpoint)
-                || StringUtils.isEmpty(customerToken)
-                || StringUtils.isEmpty(mediaLocation)) {
-            throw new IllegalStateException("Endpoint or integrationToken or customerToken or mediaLocation not supplied.");
-        }
-
         return new MagentoCustomerImpl(conf, customerToken);
     }
 

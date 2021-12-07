@@ -25,6 +25,8 @@ public class MagentoCustomerImpl implements MagentoCustomer {
     private MagentoProductApi magentoCustomerProductApi;
     private MagentoWishlistApi magentoWishlistApi;
     private MagentoCartApi magentoCartApi;
+
+    //for customer using getIntegrationToken.
     private MagentoCustomerApi magentoCustomerApi;
 
     public MagentoCustomerImpl(Configuration conf, String customerToken) {
@@ -32,17 +34,16 @@ public class MagentoCustomerImpl implements MagentoCustomer {
         this.customerToken = customerToken;
         this.init();
     }
-    
-    public void init() {
-        if (StringUtils.isEmpty(customerToken))
-            throw new NullPointerException("customerToken cannot be null");
-        
-        String endpoint = conf.getEndpoint();
-        MagentoInterceptor customerInterceptor = new MagentoInterceptor(customerToken);;
-        magentoCustomerProductApi = RetrofitService.createService(MagentoProductApi.class, customerInterceptor, endpoint);
-        magentoWishlistApi = RetrofitService.createService(MagentoWishlistApi.class, customerInterceptor, endpoint);
-        magentoCartApi = RetrofitService.createService(MagentoCartApi.class, customerInterceptor, endpoint);
 
+    public void init() {
+        String endpoint = conf.getEndpoint();
+        if (!StringUtils.isEmpty(this.customerToken)) {
+            MagentoInterceptor customerInterceptor = new MagentoInterceptor(customerToken);;
+            magentoCustomerProductApi = RetrofitService.createService(MagentoProductApi.class, customerInterceptor, endpoint);
+            magentoWishlistApi = RetrofitService.createService(MagentoWishlistApi.class, customerInterceptor, endpoint);
+            magentoCartApi = RetrofitService.createService(MagentoCartApi.class, customerInterceptor, endpoint);
+        }
+        magentoCustomerApi = RetrofitService.createService(MagentoCustomerApi.class, new MagentoInterceptor(conf.getIntegrationToken()), endpoint);
     }
 
     @Override
@@ -368,6 +369,17 @@ public class MagentoCustomerImpl implements MagentoCustomer {
         return RetrofitService.getData(response);
     }
 
+    @Override
+    public String getAccessToken(Long customerId) throws MagentoException {
+        Response<String> response;
+        try {
+            response = this.magentoCustomerApi.getAccessToken(customerId).execute();
+        } catch (Exception ex) {
+            log.error("Error when retrieve customer's access token ", ex);
+            throw new MagentoException(MagentoErrorInfo.MAGENTO_CUSTOM_ERROR_CODE, ex.getMessage());
+        }
+        return RetrofitService.getData(response);
+    }
 
     @Override
     public Response<Object> customerLogin(MagentoCustomerLoginRequest request) throws MagentoException {

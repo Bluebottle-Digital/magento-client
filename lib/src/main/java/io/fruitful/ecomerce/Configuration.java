@@ -9,17 +9,19 @@ public class Configuration {
     private Long defaultCategoryId;
     private Long talentsCategoryId;
     private String mediaLocation;
+    private Integer tokenLifeTime; // Hours
 
     public Configuration() {
     }
 
-    public Configuration(String endpoint, String integrationToken, List<String> defaultCategories, Long defaultCategoryId, Long talentsCategoryId, String mediaLocation) {
+    public Configuration(String endpoint, String integrationToken, List<String> defaultCategories, Long defaultCategoryId, Long talentsCategoryId, String mediaLocation, Integer tokenLifeTime) {
         this.endpoint = endpoint;
         this.integrationToken = integrationToken;
         this.defaultCategories = defaultCategories;
         this.defaultCategoryId = defaultCategoryId;
         this.talentsCategoryId = talentsCategoryId;
         this.mediaLocation = mediaLocation;
+        this.tokenLifeTime = tokenLifeTime;
     }
 
     public String getEndpoint() {
@@ -68,5 +70,13 @@ public class Configuration {
 
     public void setMediaLocation(String mediaLocation) {
         this.mediaLocation = mediaLocation;
+    }
+
+    public Integer getTokenLifeTime() {
+        return tokenLifeTime;
+    }
+
+    public void setTokenLifeTime(Integer tokenLifeTime) {
+        this.tokenLifeTime = tokenLifeTime;
     }
 }
